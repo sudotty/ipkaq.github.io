@@ -37,4 +37,154 @@
     
   </entry>
   
+  <entry>
+    <title>程序员不可不知的SQL系列之避免排序</title>
+    <link href="http://yoursite.com/2018/11/21/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84SQL%E7%B3%BB%E5%88%97%E4%B9%8B%E9%81%BF%E5%85%8D%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2018/11/21/程序员不可不知的SQL系列之避免排序/</id>
+    <published>2018-11-21T15:03:45.000Z</published>
+    <updated>2019-07-12T02:44:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="避免排序"><a href="#避免排序" class="headerlink" title="避免排序"></a>避免排序</h2><p>会进行排序的运算有：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GROUP BY</span><br><span class="line">ORDER BY</span><br><span class="line">聚合函数 SUM, COUNT,AVG,MAX,MIN</span><br><span class="line">DISTINCT</span><br><span class="line">集合运算符 UNION INTERSECT EXCEPT</span><br><span class="line">窗口函数 RANK ROW_NUMBER</span><br></pre></td></tr></table></figure><ol><li>在使用集合运算符的时候，UNION INTERSECT EXCEPT ,如果不在乎结果中有重复数据，请使用UNION ALL代替UNION，这样就不会排序了。对于INTERSECT和EXCEPT都是如此，加上ALL就不会排序了。</li><li>使用EXISTS代替DISTINCT，为了去重，DISTINCT也会排序，所以尽可能避免。</li><li>在MAX/MIN函数使用时，这两个都会进行排序。如果在参数字段上建有索引，那么只会扫描索引，不会扫描整个表。对于联合索引，只要查询条件是联合索引的第一个字段，索引就是有效的。这种方式并不能去掉排序，只是会优化</li><li>通常情况下，GROUP BY 和ORDER BY 都会进行排序。通常优化方式是：采用带有索引的列来进行GROUP BY 和ORDER BY。</li></ol><blockquote><p>在一些数据库里，如果操作对象上的列是唯一索引，那么排序过程本身会被省略掉。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      SQL优化之避免排序
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
+    
+    
+      <category term="SQL优化" scheme="http://yoursite.com/tags/SQL%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员不可不知的SQL查询优化系列之IN关键词优化</title>
+    <link href="http://yoursite.com/2018/11/20/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B8%8D%E5%8F%AF%E4%B8%8D%E7%9F%A5%E7%9A%84SQL%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/"/>
+    <id>http://yoursite.com/2018/11/20/程序员不可不知的SQL查询优化/</id>
+    <published>2018-11-20T14:05:07.000Z</published>
+    <updated>2019-07-12T02:44:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="程序员不可不知的SQL系列之谓词-IN-优化"><a href="#程序员不可不知的SQL系列之谓词-IN-优化" class="headerlink" title="程序员不可不知的SQL系列之谓词 IN 优化"></a>程序员不可不知的SQL系列之谓词 IN 优化</h2><p><strong>当子查询的时候，使用EXISTS替代IN。</strong></p><p>IN的使用频率很高，因为语义性很强，很好理解。但是可能成为查询的瓶颈，因为IN是执行的全表扫描，所以一般优化代码中含有IN的语句就能大幅度提高性能。</p><p>如果IN是数值列表，那么不需要过多注意，如果是子查询，就要进行优化。</p><p>为什么使用EXISTS优化？理由如下：</p><ul><li>如果在关联列上建立了索引，那么查询子关联表的时候，不需要查询实际表，只需要查询索引即可。</li><li>使用EXISTS，只要查询一行满足条件就会终止查询。</li></ul><p>IN是扫描全表。当IN子句是查询的时候，那么数据库会优先执行子查询，并且会将结果存在一张临时表中（内联视图），然后扫描整个视图。这种操作会非常消耗资源。</p><p><code>还有一种方式就是使用连接代替IN,但是大多数情况下EXISTS更好！</code></p>]]></content>
+    
+    <summary type="html">
+    
+      程序员不可不知的SQL系列，IN子查询优化
+    
+    </summary>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
+    
+    
+      <category term="SQL优化" scheme="http://yoursite.com/tags/SQL%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>百分百招聘到优秀程序员的面试问题</title>
+    <link href="http://yoursite.com/2018/11/18/%E7%99%BE%E5%88%86%E7%99%BE%E6%8B%9B%E8%81%98%E5%88%B0%E4%BC%98%E7%A7%80%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/11/18/百分百招聘到优秀程序员的面试问题/</id>
+    <published>2018-11-18T15:04:19.000Z</published>
+    <updated>2019-07-12T02:44:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="技术面试诀窍"><a href="#技术面试诀窍" class="headerlink" title="技术面试诀窍"></a>技术面试诀窍</h2><p>先说诀窍：<strong>提出一个问题“在你过去的工作中，遇到过哪些让你印象深刻的困难，你是如何解决的？”，看看对方如何回答</strong>。</p><h2 id="技术面试最难的是什么"><a href="#技术面试最难的是什么" class="headerlink" title="技术面试最难的是什么"></a>技术面试最难的是什么</h2><p>大家在招聘中，总是提出各种技术问题，有的很难，有的很简单，不同的面试官的技术方向不同，问题深度和广度也不同，对于应聘者，可能遇到张三就能顺利通过，碰到李四只能被虐。这种没有固定标准，没有固定套路的招聘形式。</p><h2 id="靠谱的人"><a href="#靠谱的人" class="headerlink" title="靠谱的人"></a>靠谱的人</h2><p>按照我的经验来看，简历再漂亮的人，这个问题答不好，大都可以直接忽略！为什么这么说呢？因为我们要招聘的不是一个“经历丰富”的人，而是一个有“职业素养”的人。你遇到的问题有可能会很难，有可能会简单，但是<strong>我们看重的并不是问题的难度，而是解决问题的方式、步骤和反思的深度！</strong></p><p>拿恢复误删数据来说，可能算是非常简单的任务。我更感兴趣的是怎么样分析问题，找到了怎样的资料，采取了怎样的步骤，此后做了哪些措施来避免这种错误再次出现。</p><p>在我看来，<strong>相比问题的难度，解决问题的难度，解决问题的方式和步骤以及反思的深度，都体现一个人的职业素养。</strong></p><p>一个所谓的“高手”，可能缺乏这种素养。一个涉世未深的“毛头小子”可能具备这种素养。对于每一个面试官，我觉得你应该反思自己的评判标准是否真的有效！而<strong>每一个候选者，需要对自己的过往进行一次反思，哪一次的开发过程给自己的提升最大，自己在这次印象深刻的事件中扮演了什么角色，如何才能更好地发挥自己的能力以及如何提高在团队中的作用</strong>！</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我一直认为，<strong>一个人只有学会了反思才能进步，或许犯错才是进步的唯一途径，这种犯错，印象越深刻，自己的进步动力就越大。</strong>反思自己的过往总能给自己一个评判，只有对自己认识深刻，才能认识别人。所以不靠谱的人怎么可能招聘得到靠谱的人呢？</p><blockquote><p>一直没有说优秀的人？难道靠谱的人不就是优秀的人吗？🙄</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      优秀的人一定是一个靠谱的人，反之亦然！不是吗？
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大神程序员的个人成长</title>
+    <link href="http://yoursite.com/2018/11/18/%E5%A4%A7%E7%A5%9E%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
+    <id>http://yoursite.com/2018/11/18/大神程序员的个人成长/</id>
+    <published>2018-11-18T14:58:36.000Z</published>
+    <updated>2019-07-12T02:44:37.001Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><h2 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h2><ul><li><strong>确立个人方向，结合工作内容，找出对应短板</strong><ul><li>该领域主要专家们的工作是否都了解？</li><li>相关网络知识，文件格式是否都熟悉？</li><li>相关的技术和主要工具是否看过，用过？</li></ul></li><li><strong>阅读只是学习过程的起点，不能止于阅读</strong><ul><li>工具的每个参数每个菜单都要看，要试</li><li>学习网络协议要实际抓包分析，学习文件格式要读源码实现</li><li>学习老漏洞一定要调试，搞懂别人代码每一个字节的意义，之后要完全自己重写一个Expoit</li><li>细节，细节，细节！刨根问底</li></ul></li></ul><h2 id="建立学习参考目标"><a href="#建立学习参考目标" class="headerlink" title="建立学习参考目标"></a>建立学习参考目标</h2><ul><li><strong>短期参考什么？比自己优秀的同龄人</strong><ul><li>阅读他们的文章和其他工作成果，从细节观察他们的学习方式和工作方式</li></ul></li><li><strong>中期参考什么？你的方向上的业内专家</strong><ul><li>了解他们的成长轨迹，跟踪他们关注的内容</li></ul></li><li><strong>长期参考什么？业内老牌企业和先锋企业</strong><ul><li>把握行业发展、技术趋势，为未来积累</li></ul></li></ul><h2 id="推荐的学习方式"><a href="#推荐的学习方式" class="headerlink" title="推荐的学习方式"></a>推荐的学习方式</h2><ul><li><strong>以工具为线索</strong><ul><li>一个比较省事儿的学习目录，Kali Linux</li><li>学习思路，以Metaspoit为例：<ul><li>遍历每个目录，除了Expoit里面还有什么？</li><li>每个工具分别有什么功能？原理是什么？涉及哪些知识？</li><li>能否改进优化？能否发展，组合出新的功能？</li></ul></li></ul></li><li><strong>以专家为线索</strong><ul><li>你的技术方向里有哪些专家？</li><li>他们的邮箱、主页、社交网络号是多少？</li><li>他们在该方向上有哪些作品，发表过哪些演讲？</li><li>跟踪关注，一个一个学</li></ul></li></ul><h2 id="处理好学习、工作和生活"><a href="#处理好学习、工作和生活" class="headerlink" title="处理好学习、工作和生活"></a>处理好学习、工作和生活</h2><ul><li><p><strong>学习、学习和工作是矛盾统一的</strong></p></li><li><p><strong>三者都需要时间</strong>，你一天只有24小时</p><ul><li>调和矛盾的关键，==提高效率==！</li></ul></li><li><p><strong>对没有一个好爸爸的人来说，你的学习、工作会影响你能不能追求诗和远方</strong></p></li><li><p><strong>有好爸爸也要学习，因为能力之外的资本为零</strong></p><blockquote><p>王思聪：SAT不是满分我们一般都没脸说考过</p></blockquote></li></ul><h2 id="如何提高效率"><a href="#如何提高效率" class="headerlink" title="如何提高效率"></a>如何提高效率</h2><ul><li><strong>做好预研，收集相关前人成果，避免无谓的重复劳动</strong></li><li><strong>在可行性判断阶段，能找到工具就不写代码，能用脚本语言写就不用编译语言写，把完美主义放在最终实现阶段</strong></li><li><strong>做好笔记并定期整理，遗忘会让所有的投入都白白浪费</strong></li><li><strong>多和同事交流，别人说一个工具的名字能让你节约几个小时</strong></li><li><strong>咖啡可以提高效率，而且合法</strong></li><li><strong>无论如何提高效率，要成为专家，都需要大量的时间投入</strong></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      一个优秀的程序员，同样也是一个优秀的人
+    
+    </summary>
+    
+    
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术问题最好的讲解方式</title>
+    <link href="http://yoursite.com/2018/08/24/%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98%E6%9C%80%E5%A5%BD%E7%9A%84%E8%AE%B2%E8%A7%A3%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2018/08/24/技术问题最好的讲解方式/</id>
+    <published>2018-08-24T13:11:38.000Z</published>
+    <updated>2019-07-12T02:44:37.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>我比较喜欢自顶向下的讲解方法：</p><p>先了解对外的功能，</p><p>再了解各个模块之间的协作，</p><p>最后看细节的实现。</p>]]></content>
+    
+    <summary type="html">
+    
+      技术问题最好的讲解方式
+    
+    </summary>
+    
+      <category term="技术思考" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>kong在docker下安装以及快速使用</title>
+    <link href="http://yoursite.com/2018/08/22/kong%E5%9C%A8docker%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/08/22/kong在docker下的安装以及快速使用/</id>
+    <published>2018-08-22T01:27:31.000Z</published>
+    <updated>2019-07-12T02:44:37.002Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="API-gateway-Kong-docker安装"><a href="#API-gateway-Kong-docker安装" class="headerlink" title="API gateway Kong docker安装"></a>API gateway Kong docker安装</h2><h3 id="1-安装kong和数据库"><a href="#1-安装kong和数据库" class="headerlink" title="1. 安装kong和数据库"></a>1. 安装kong和数据库</h3><ul><li><h4 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h4></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create kong-net</span><br></pre></td></tr></table></figure><ul><li><h4 id="kong数据库"><a href="#kong数据库" class="headerlink" title="kong数据库"></a>kong数据库</h4></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name kong-database \</span><br><span class="line"></span><br><span class="line">--network=kong-net \</span><br><span class="line"></span><br><span class="line">-p 5432:5432 \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"POSTGRES_USER=kong"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"POSTGRES_DB=kong"</span> \</span><br><span class="line"></span><br><span class="line">postgres:9.6</span><br></pre></td></tr></table></figure><ul><li><h4 id="数据migrations"><a href="#数据migrations" class="headerlink" title="数据migrations"></a>数据migrations</h4></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run --rm \</span><br><span class="line"></span><br><span class="line">--network=kong-net \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_DATABASE=postgres"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PG_HOST=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_CASSANDRA_CONTACT_POINTS=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">kong:0.13 kong migrations up</span><br></pre></td></tr></table></figure><ul><li><h4 id="Kong启动-开发环境下"><a href="#Kong启动-开发环境下" class="headerlink" title="Kong启动,开发环境下"></a>Kong启动,开发环境下</h4></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name kong \</span><br><span class="line"></span><br><span class="line">--network=kong-net \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_DATABASE=postgres"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PG_HOST=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_CASSANDRA_CONTACT_POINTS=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PROXY_ACCESS_LOG=/dev/stdout"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_ACCESS_LOG=/dev/stdout"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PROXY_ERROR_LOG=/dev/stderr"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_ERROR_LOG=/dev/stderr"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl"</span> \</span><br><span class="line"></span><br><span class="line">-p 8000:8000 \</span><br><span class="line"></span><br><span class="line">-p 8443:8443 \</span><br><span class="line"></span><br><span class="line">-p 8001:8001 \</span><br><span class="line"></span><br><span class="line">-p 8444:8444 \</span><br><span class="line"></span><br><span class="line">kong:0.13</span><br></pre></td></tr></table></figure><ul><li><h4 id="Kong启动，生产环境下"><a href="#Kong启动，生产环境下" class="headerlink" title="Kong启动，生产环境下"></a>Kong启动，生产环境下</h4></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run -d --name kong \</span><br><span class="line"></span><br><span class="line">--network=kong-net \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_DATABASE=postgres"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PG_HOST=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_CASSANDRA_CONTACT_POINTS=kong-database"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PROXY_ACCESS_LOG=/dev/stdout"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_ACCESS_LOG=/dev/stdout"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_PROXY_ERROR_LOG=/dev/stderr"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_ERROR_LOG=/dev/stderr"</span> \</span><br><span class="line"></span><br><span class="line">-e <span class="string">"KONG_ADMIN_LISTEN=0.0.0.0:8001, 0.0.0.0:8444 ssl"</span> \</span><br><span class="line"></span><br><span class="line">-p 80:8000 \</span><br><span class="line"></span><br><span class="line">-p 443:8443 \</span><br><span class="line"></span><br><span class="line">-p 8001:8001 \</span><br><span class="line"></span><br><span class="line">-p 8444:8444 \</span><br><span class="line"></span><br><span class="line">kong:0.13</span><br></pre></td></tr></table></figure><h3 id="2-安装kong-dashboard"><a href="#2-安装kong-dashboard" class="headerlink" title="2. 安装kong dashboard"></a>2. 安装kong dashboard</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker run --rm --network kong-net -p 8888:8080 pgbi/kong- dashboard start --kong-url http://kong:8001</span><br></pre></td></tr></table></figure><h3 id="3-访问dashboard"><a href="#3-访问dashboard" class="headerlink" title="3. 访问dashboard"></a>3. 访问dashboard</h3><p>浏览器打开 <a href="http://localhost:8888/" target="_blank" rel="noopener">Dashbord</a></p>]]></content>
+    
+    <summary type="html">
+    
+      kong 在docker环境下安装和快速使用
+    
+    </summary>
+    
+      <category term="微服务" scheme="http://yoursite.com/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+    
+      <category term="kong" scheme="http://yoursite.com/tags/kong/"/>
+    
+      <category term="微服务" scheme="http://yoursite.com/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>鲁迅之言，今日再读</title>
+    <link href="http://yoursite.com/2018/07/20/%E9%B2%81%E8%BF%85%E9%87%91%E5%8F%A5/"/>
+    <id>http://yoursite.com/2018/07/20/鲁迅金句/</id>
+    <published>2018-07-20T05:40:50.000Z</published>
+    <updated>2019-07-12T02:44:37.001Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>猛兽总是独行，牛羊才成群结队。</p></blockquote><blockquote><p>面具戴太久就会长到脸上，再想摘下来，除非伤筋动骨扒皮。</p></blockquote><blockquote><p>假使做事要面面俱到，那什么事都不能做了</p></blockquote><blockquote><p>当我沉默的时候，我感觉很充实，当我开口说话，就感到了空虚。</p></blockquote><blockquote><p>改造自己，总比禁止别人来的难。</p></blockquote><blockquote><p>必须敢于正视，这才可望敢想、敢说、敢做、敢当。</p></blockquote><blockquote><p>我觉得坦途在前，人又何必因为一些小障碍而不走路呢？</p></blockquote><blockquote><p>其实先驱者是容易变成绊脚石的。</p></blockquote><blockquote><p>倘只看书，就变成书橱。</p></blockquote><blockquote><p>我们中国人对于不是自己的东西，或者将不为自己所有的东西，总要破坏了才快活的。</p></blockquote><blockquote><p>我一向不相信，昭君出塞会安汉，木兰从军就可以保隋，也不信妲己亡殷，西施沼吴，杨妃乱唐的那些古老话。<br>我以为在男权社会里，女人是绝不会有这种大力量的，兴亡的责任，都该男的负。<br>但向来男性的作者，大抵将败亡的大罪，推在女性身上，这真是一钱不值的没有出息的男人。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      鲁迅的文字，常读常新
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="箴言" scheme="http://yoursite.com/tags/%E7%AE%B4%E8%A8%80/"/>
+    
+  </entry>
+  
 </feed>
