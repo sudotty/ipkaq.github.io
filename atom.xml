@@ -102,11 +102,11 @@
   </entry>
   
   <entry>
-    <title>大神程序员的个人成长</title>
-    <link href="http://yoursite.com/2018/11/18/%E5%A4%A7%E7%A5%9E%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
-    <id>http://yoursite.com/2018/11/18/大神程序员的个人成长/</id>
+    <title>程序员的个人成长</title>
+    <link href="http://yoursite.com/2018/11/18/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
+    <id>http://yoursite.com/2018/11/18/程序员的个人成长/</id>
     <published>2018-11-18T14:58:36.000Z</published>
-    <updated>2019-07-12T02:44:37.001Z</updated>
+    <updated>2019-07-12T02:48:13.281Z</updated>
     
     <content type="html"><![CDATA[<blockquote><h2 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h2><ul><li><strong>确立个人方向，结合工作内容，找出对应短板</strong><ul><li>该领域主要专家们的工作是否都了解？</li><li>相关网络知识，文件格式是否都熟悉？</li><li>相关的技术和主要工具是否看过，用过？</li></ul></li><li><strong>阅读只是学习过程的起点，不能止于阅读</strong><ul><li>工具的每个参数每个菜单都要看，要试</li><li>学习网络协议要实际抓包分析，学习文件格式要读源码实现</li><li>学习老漏洞一定要调试，搞懂别人代码每一个字节的意义，之后要完全自己重写一个Expoit</li><li>细节，细节，细节！刨根问底</li></ul></li></ul><h2 id="建立学习参考目标"><a href="#建立学习参考目标" class="headerlink" title="建立学习参考目标"></a>建立学习参考目标</h2><ul><li><strong>短期参考什么？比自己优秀的同龄人</strong><ul><li>阅读他们的文章和其他工作成果，从细节观察他们的学习方式和工作方式</li></ul></li><li><strong>中期参考什么？你的方向上的业内专家</strong><ul><li>了解他们的成长轨迹，跟踪他们关注的内容</li></ul></li><li><strong>长期参考什么？业内老牌企业和先锋企业</strong><ul><li>把握行业发展、技术趋势，为未来积累</li></ul></li></ul><h2 id="推荐的学习方式"><a href="#推荐的学习方式" class="headerlink" title="推荐的学习方式"></a>推荐的学习方式</h2><ul><li><strong>以工具为线索</strong><ul><li>一个比较省事儿的学习目录，Kali Linux</li><li>学习思路，以Metaspoit为例：<ul><li>遍历每个目录，除了Expoit里面还有什么？</li><li>每个工具分别有什么功能？原理是什么？涉及哪些知识？</li><li>能否改进优化？能否发展，组合出新的功能？</li></ul></li></ul></li><li><strong>以专家为线索</strong><ul><li>你的技术方向里有哪些专家？</li><li>他们的邮箱、主页、社交网络号是多少？</li><li>他们在该方向上有哪些作品，发表过哪些演讲？</li><li>跟踪关注，一个一个学</li></ul></li></ul><h2 id="处理好学习、工作和生活"><a href="#处理好学习、工作和生活" class="headerlink" title="处理好学习、工作和生活"></a>处理好学习、工作和生活</h2><ul><li><p><strong>学习、学习和工作是矛盾统一的</strong></p></li><li><p><strong>三者都需要时间</strong>，你一天只有24小时</p><ul><li>调和矛盾的关键，==提高效率==！</li></ul></li><li><p><strong>对没有一个好爸爸的人来说，你的学习、工作会影响你能不能追求诗和远方</strong></p></li><li><p><strong>有好爸爸也要学习，因为能力之外的资本为零</strong></p><blockquote><p>王思聪：SAT不是满分我们一般都没脸说考过</p></blockquote></li></ul><h2 id="如何提高效率"><a href="#如何提高效率" class="headerlink" title="如何提高效率"></a>如何提高效率</h2><ul><li><strong>做好预研，收集相关前人成果，避免无谓的重复劳动</strong></li><li><strong>在可行性判断阶段，能找到工具就不写代码，能用脚本语言写就不用编译语言写，把完美主义放在最终实现阶段</strong></li><li><strong>做好笔记并定期整理，遗忘会让所有的投入都白白浪费</strong></li><li><strong>多和同事交流，别人说一个工具的名字能让你节约几个小时</strong></li><li><strong>咖啡可以提高效率，而且合法</strong></li><li><strong>无论如何提高效率，要成为专家，都需要大量的时间投入</strong></li></ul></blockquote>]]></content>
     
