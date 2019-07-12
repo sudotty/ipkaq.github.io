@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-07-11T13:46:50.661Z</updated>
+  <updated>2019-07-12T02:50:02.989Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/07/11/hello-world/"/>
-    <id>http://yoursite.com/2019/07/11/hello-world/</id>
-    <published>2019-07-11T13:46:50.000Z</published>
-    <updated>2019-07-11T13:46:50.661Z</updated>
+    <link href="http://yoursite.com/2019/07/12/hello-world/"/>
+    <id>http://yoursite.com/2019/07/12/hello-world/</id>
+    <published>2019-07-12T02:50:02.989Z</published>
+    <updated>2019-07-12T02:50:02.989Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -102,26 +102,6 @@
   </entry>
   
   <entry>
-    <title>程序员的个人成长</title>
-    <link href="http://yoursite.com/2018/11/18/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
-    <id>http://yoursite.com/2018/11/18/程序员的个人成长/</id>
-    <published>2018-11-18T14:58:36.000Z</published>
-    <updated>2019-07-12T02:48:13.281Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h2 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h2><ul><li><strong>确立个人方向，结合工作内容，找出对应短板</strong><ul><li>该领域主要专家们的工作是否都了解？</li><li>相关网络知识，文件格式是否都熟悉？</li><li>相关的技术和主要工具是否看过，用过？</li></ul></li><li><strong>阅读只是学习过程的起点，不能止于阅读</strong><ul><li>工具的每个参数每个菜单都要看，要试</li><li>学习网络协议要实际抓包分析，学习文件格式要读源码实现</li><li>学习老漏洞一定要调试，搞懂别人代码每一个字节的意义，之后要完全自己重写一个Expoit</li><li>细节，细节，细节！刨根问底</li></ul></li></ul><h2 id="建立学习参考目标"><a href="#建立学习参考目标" class="headerlink" title="建立学习参考目标"></a>建立学习参考目标</h2><ul><li><strong>短期参考什么？比自己优秀的同龄人</strong><ul><li>阅读他们的文章和其他工作成果，从细节观察他们的学习方式和工作方式</li></ul></li><li><strong>中期参考什么？你的方向上的业内专家</strong><ul><li>了解他们的成长轨迹，跟踪他们关注的内容</li></ul></li><li><strong>长期参考什么？业内老牌企业和先锋企业</strong><ul><li>把握行业发展、技术趋势，为未来积累</li></ul></li></ul><h2 id="推荐的学习方式"><a href="#推荐的学习方式" class="headerlink" title="推荐的学习方式"></a>推荐的学习方式</h2><ul><li><strong>以工具为线索</strong><ul><li>一个比较省事儿的学习目录，Kali Linux</li><li>学习思路，以Metaspoit为例：<ul><li>遍历每个目录，除了Expoit里面还有什么？</li><li>每个工具分别有什么功能？原理是什么？涉及哪些知识？</li><li>能否改进优化？能否发展，组合出新的功能？</li></ul></li></ul></li><li><strong>以专家为线索</strong><ul><li>你的技术方向里有哪些专家？</li><li>他们的邮箱、主页、社交网络号是多少？</li><li>他们在该方向上有哪些作品，发表过哪些演讲？</li><li>跟踪关注，一个一个学</li></ul></li></ul><h2 id="处理好学习、工作和生活"><a href="#处理好学习、工作和生活" class="headerlink" title="处理好学习、工作和生活"></a>处理好学习、工作和生活</h2><ul><li><p><strong>学习、学习和工作是矛盾统一的</strong></p></li><li><p><strong>三者都需要时间</strong>，你一天只有24小时</p><ul><li>调和矛盾的关键，==提高效率==！</li></ul></li><li><p><strong>对没有一个好爸爸的人来说，你的学习、工作会影响你能不能追求诗和远方</strong></p></li><li><p><strong>有好爸爸也要学习，因为能力之外的资本为零</strong></p><blockquote><p>王思聪：SAT不是满分我们一般都没脸说考过</p></blockquote></li></ul><h2 id="如何提高效率"><a href="#如何提高效率" class="headerlink" title="如何提高效率"></a>如何提高效率</h2><ul><li><strong>做好预研，收集相关前人成果，避免无谓的重复劳动</strong></li><li><strong>在可行性判断阶段，能找到工具就不写代码，能用脚本语言写就不用编译语言写，把完美主义放在最终实现阶段</strong></li><li><strong>做好笔记并定期整理，遗忘会让所有的投入都白白浪费</strong></li><li><strong>多和同事交流，别人说一个工具的名字能让你节约几个小时</strong></li><li><strong>咖啡可以提高效率，而且合法</strong></li><li><strong>无论如何提高效率，要成为专家，都需要大量的时间投入</strong></li></ul></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      一个优秀的程序员，同样也是一个优秀的人
-    
-    </summary>
-    
-    
-      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>技术问题最好的讲解方式</title>
     <link href="http://yoursite.com/2018/08/24/%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98%E6%9C%80%E5%A5%BD%E7%9A%84%E8%AE%B2%E8%A7%A3%E6%96%B9%E5%BC%8F/"/>
     <id>http://yoursite.com/2018/08/24/技术问题最好的讲解方式/</id>
@@ -166,24 +146,22 @@
   </entry>
   
   <entry>
-    <title>鲁迅之言，今日再读</title>
-    <link href="http://yoursite.com/2018/07/20/%E9%B2%81%E8%BF%85%E9%87%91%E5%8F%A5/"/>
-    <id>http://yoursite.com/2018/07/20/鲁迅金句/</id>
-    <published>2018-07-20T05:40:50.000Z</published>
-    <updated>2019-07-12T02:44:37.001Z</updated>
+    <title>程序员的个人成长</title>
+    <link href="http://yoursite.com/2012/01/01/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/"/>
+    <id>http://yoursite.com/2012/01/01/程序员的个人成长/</id>
+    <published>2012-01-01T14:58:36.000Z</published>
+    <updated>2019-07-12T02:49:30.390Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>猛兽总是独行，牛羊才成群结队。</p></blockquote><blockquote><p>面具戴太久就会长到脸上，再想摘下来，除非伤筋动骨扒皮。</p></blockquote><blockquote><p>假使做事要面面俱到，那什么事都不能做了</p></blockquote><blockquote><p>当我沉默的时候，我感觉很充实，当我开口说话，就感到了空虚。</p></blockquote><blockquote><p>改造自己，总比禁止别人来的难。</p></blockquote><blockquote><p>必须敢于正视，这才可望敢想、敢说、敢做、敢当。</p></blockquote><blockquote><p>我觉得坦途在前，人又何必因为一些小障碍而不走路呢？</p></blockquote><blockquote><p>其实先驱者是容易变成绊脚石的。</p></blockquote><blockquote><p>倘只看书，就变成书橱。</p></blockquote><blockquote><p>我们中国人对于不是自己的东西，或者将不为自己所有的东西，总要破坏了才快活的。</p></blockquote><blockquote><p>我一向不相信，昭君出塞会安汉，木兰从军就可以保隋，也不信妲己亡殷，西施沼吴，杨妃乱唐的那些古老话。<br>我以为在男权社会里，女人是绝不会有这种大力量的，兴亡的责任，都该男的负。<br>但向来男性的作者，大抵将败亡的大罪，推在女性身上，这真是一钱不值的没有出息的男人。</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<blockquote><h2 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h2><ul><li><strong>确立个人方向，结合工作内容，找出对应短板</strong><ul><li>该领域主要专家们的工作是否都了解？</li><li>相关网络知识，文件格式是否都熟悉？</li><li>相关的技术和主要工具是否看过，用过？</li></ul></li><li><strong>阅读只是学习过程的起点，不能止于阅读</strong><ul><li>工具的每个参数每个菜单都要看，要试</li><li>学习网络协议要实际抓包分析，学习文件格式要读源码实现</li><li>学习老漏洞一定要调试，搞懂别人代码每一个字节的意义，之后要完全自己重写一个Expoit</li><li>细节，细节，细节！刨根问底</li></ul></li></ul><h2 id="建立学习参考目标"><a href="#建立学习参考目标" class="headerlink" title="建立学习参考目标"></a>建立学习参考目标</h2><ul><li><strong>短期参考什么？比自己优秀的同龄人</strong><ul><li>阅读他们的文章和其他工作成果，从细节观察他们的学习方式和工作方式</li></ul></li><li><strong>中期参考什么？你的方向上的业内专家</strong><ul><li>了解他们的成长轨迹，跟踪他们关注的内容</li></ul></li><li><strong>长期参考什么？业内老牌企业和先锋企业</strong><ul><li>把握行业发展、技术趋势，为未来积累</li></ul></li></ul><h2 id="推荐的学习方式"><a href="#推荐的学习方式" class="headerlink" title="推荐的学习方式"></a>推荐的学习方式</h2><ul><li><strong>以工具为线索</strong><ul><li>一个比较省事儿的学习目录，Kali Linux</li><li>学习思路，以Metaspoit为例：<ul><li>遍历每个目录，除了Expoit里面还有什么？</li><li>每个工具分别有什么功能？原理是什么？涉及哪些知识？</li><li>能否改进优化？能否发展，组合出新的功能？</li></ul></li></ul></li><li><strong>以专家为线索</strong><ul><li>你的技术方向里有哪些专家？</li><li>他们的邮箱、主页、社交网络号是多少？</li><li>他们在该方向上有哪些作品，发表过哪些演讲？</li><li>跟踪关注，一个一个学</li></ul></li></ul><h2 id="处理好学习、工作和生活"><a href="#处理好学习、工作和生活" class="headerlink" title="处理好学习、工作和生活"></a>处理好学习、工作和生活</h2><ul><li><p><strong>学习、学习和工作是矛盾统一的</strong></p></li><li><p><strong>三者都需要时间</strong>，你一天只有24小时</p><ul><li>调和矛盾的关键，==提高效率==！</li></ul></li><li><p><strong>对没有一个好爸爸的人来说，你的学习、工作会影响你能不能追求诗和远方</strong></p></li><li><p><strong>有好爸爸也要学习，因为能力之外的资本为零</strong></p><blockquote><p>王思聪：SAT不是满分我们一般都没脸说考过</p></blockquote></li></ul><h2 id="如何提高效率"><a href="#如何提高效率" class="headerlink" title="如何提高效率"></a>如何提高效率</h2><ul><li><strong>做好预研，收集相关前人成果，避免无谓的重复劳动</strong></li><li><strong>在可行性判断阶段，能找到工具就不写代码，能用脚本语言写就不用编译语言写，把完美主义放在最终实现阶段</strong></li><li><strong>做好笔记并定期整理，遗忘会让所有的投入都白白浪费</strong></li><li><strong>多和同事交流，别人说一个工具的名字能让你节约几个小时</strong></li><li><strong>咖啡可以提高效率，而且合法</strong></li><li><strong>无论如何提高效率，要成为专家，都需要大量的时间投入</strong></li></ul></blockquote>]]></content>
     
     <summary type="html">
     
-      鲁迅的文字，常读常新
+      一个优秀的程序员，同样也是一个优秀的人
     
     </summary>
     
-      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
     
-    
-      <category term="箴言" scheme="http://yoursite.com/tags/%E7%AE%B4%E8%A8%80/"/>
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
     
   </entry>
   
