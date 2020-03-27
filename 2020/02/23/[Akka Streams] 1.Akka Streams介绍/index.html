@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang>
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="baidu-site-verification" content="IX7vFq28i0s"><meta name="google-site-verification" content="Wb12dzk_es2p4i5o57fY5rqZl_2NddJ06po91FmogN8"><link rel="alternate" href="/atom.xml" title="ipkaq's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://yoursite.com/2020/02/23/[Akka Streams] 1.Akka Streams介绍/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2da1c6eb9857cd3168930de9c5ed8a6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86900433-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-86900433-2');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":false};
+</script>
+
+    <title> - ipkaq's blog</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">ipkaq's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">ipkaq's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-02-23
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Akka-Streams介绍"><span class="toc-text">Akka Streams介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#动机"><span class="toc-text">动机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#与Reactive-Stream的关系"><span class="toc-text">与Reactive Stream的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何入门学习"><span class="toc-text">如何入门学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考阅读"><span class="toc-text">参考阅读</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SPI"><span class="toc-text">SPI</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="Akka-Streams介绍"><a href="#Akka-Streams介绍" class="headerlink" title="Akka Streams介绍"></a>Akka Streams介绍</h1><h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>今天我们从网上消费的服务包含了很多的流式数据的情况，比如从一个服务下载上传，或者点对点的数据交换。把数据看做是流而不是一个整体非常有用，计算机本身就是利用这种方式来收发数据的（例如<code>TCP</code>），经常碰到数据集非常大，此时很难作为一个整体来处理，此时这种做法非常有必要。我们通过集群来分散计算和分析，并且称之为“大数据”，此时处理数据的整体原则是通过多核CPU把数据作为一个流来有序的订阅。</p>
+<p><code>Actor</code>也可以处理流数据：通过发送和接受一系列<code>message</code>来把数据从一个地方转移到另一个地方。我们在发送和接受消息的时候，必须小心处理Streaming Data以避免<code>buffer</code>和<code>mailbox</code>溢出，在<code>Actor</code>之间实现一个稳健的流式系统，此时Actor就有点冗长和易错。<code>Actor</code>还有一个缺陷在于消息可能会丢失，这种情况下必须再次发送。这种发送失败会导致接收端的麻烦。当处理一个具体的指定类型的流式数据的时候，<code>Actor</code>同样不能提供好的静态防护功能避免运行时错误：此时可以利用类型安全来防护。</p>
+<p>因为这些原因，我们把整个解决方案捆绑整体作为<code>Akka Stream API</code>。目的是提供一个直观的、安全的流式数据处理的方式，以便我们能够更有效率的处理他们，有界资源的案例—没有内存溢出错误。为了达到这个目的，我们需要能够限制流的速率，当我们的消费服务速度跟不上的时候，系统能够调整生产者生产的速度。这个特性称为<code>背压（back-pressure）</code>，这也是<code>Reactive Streams</code>的核心理念之一。对于你来说，复杂的问题和背压机制已经被设计在了Akka Streams中，你需要担心的事情就少了；这同样意味着<code>Akka Stream</code>可以和其他的<code>Reactive Stream</code> 无缝对接交互（<code>Reactive Stream定义了交互[SPI]()，Akka Stream提供了这个实现的用户友好的API</code>）</p>
+<h3 id="与Reactive-Stream的关系"><a href="#与Reactive-Stream的关系" class="headerlink" title="与Reactive Stream的关系"></a>与Reactive Stream的关系</h3><p>Akka Streams API 和Reactive Streams接口完全解耦。Akka streams专注于数据流的转换形式，而Reactive streams定义了一套通用的机制，如何将数据异步化的，带有缓冲，更好利用资源的搬运数据。</p>
+<p>简言之，<code>Reactive Stream</code>的主要目的是为了定义完善的接口，以便不同的流实现可以互操作，而不是定义用户端的API接口定义。所以没有必要花时间来比对<code>Reactive Stream API</code>和<code>Akka Streams API</code>的区别。</p>
+<h2 id="如何入门学习"><a href="#如何入门学习" class="headerlink" title="如何入门学习"></a>如何入门学习</h2><p><code>Akka Streams</code>的流式处理不同于<code>Acotor模</code>和<code>Future组合</code>，因此可能需要花一些经历来认真学习以下几个主题：</p>
+<ul>
+<li>读取<code>快速入门</code>来感受一下Akka Streams看起来是什么，能做什么</li>
+<li>自顶向下的学习者可能需要精读<code>Akka Streams背后的设计原则</code></li>
+<li>自底向上的学习者需要通过反复翻看<code>Streams Cookbook</code>来找寻更多的感觉</li>
+<li>想要概览整个内置处理操作你需要查看<code>operator index</code></li>
+<li>其他章节可以按照顺序阅读或者当你需要深入某一个的时候按需阅读</li>
+</ul>
+<h2 id="参考阅读"><a href="#参考阅读" class="headerlink" title="参考阅读"></a>参考阅读</h2><h3 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h3><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Service_provider_interface" target="_blank" rel="noopener">Wiki SPI</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/28909673" target="_blank" rel="noopener">Java SPI思想梳理</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://juejin.im/post/5af952fdf265da0b9e652de3" target="_blank" rel="noopener">Java SPI机制详解</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://yq.aliyun.com/articles/640161" target="_blank" rel="noopener">高级开发必须理解的Java SPI机制</a></p>
+</blockquote>
+<blockquote>
+<p><a href="https://nickchenyx.github.io/2018/04/17/spi-essentials-md/" target="_blank" rel="noopener">SPI机制详解</a></p>
+</blockquote>
+<p>Reactive Stream</p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yoursite.com">ipkaq</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yoursite.com/2020/02/23/[Akka Streams] 1.Akka Streams介绍/">http://yoursite.com/2020/02/23/[Akka Streams] 1.Akka Streams介绍/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="prev" href="/2020/02/23/[Akka Streams]2.Akka Streams快速上手/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"></span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2020/02/12/APM 文章/">
+        <span class="next-text nav-default"></span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:sudojs@email.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/ipkaq" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2012 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ipkaq</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

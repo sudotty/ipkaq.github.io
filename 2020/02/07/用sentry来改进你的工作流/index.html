@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang>
+  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="baidu-site-verification" content="IX7vFq28i0s"><meta name="google-site-verification" content="Wb12dzk_es2p4i5o57fY5rqZl_2NddJ06po91FmogN8"><link rel="alternate" href="/atom.xml" title="ipkaq's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="http://yoursite.com/2020/02/07/用sentry来改进你的工作流/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2da1c6eb9857cd3168930de9c5ed8a6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86900433-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-86900433-2');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":false};
+</script>
+
+    <title> - ipkaq's blog</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">ipkaq's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">首页
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">归档
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签
+          </li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">ipkaq's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            首页
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            归档
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            标签
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/categories/">
+            分类
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            关于
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-02-07
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#用sentry来改进你的工作流"><span class="toc-text">用sentry来改进你的工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么做？"><span class="toc-text">怎么做？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一步：SDK集成"><span class="toc-text">第一步：SDK集成</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><h1 id="用sentry来改进你的工作流"><a href="#用sentry来改进你的工作流" class="headerlink" title="用sentry来改进你的工作流"></a>用sentry来改进你的工作流</h1><blockquote>
+<p>如果你是一个开发者，你的工作流可能看起来像下面这样：</p>
+<p>设计 —&gt; 代码&amp; review  —&gt; 测试 —&gt; CI/CD —&gt; 发现问题 —&gt; 调查 —&gt; 修复</p>
+</blockquote>
+<p>尽管有很多不错的工具可以让开发工作变得容易些，但是这些开发之后的工作流程：发现问题，调查问题，修复问题依然让人痛苦，困惑，烦人，冗长。当你介入一个生产系统bug的时候，你是如何得到的警报？你又是如何评估影响和紧迫性的？你如何快速找到问题的根源？当你提交了修复代码的时候，你如何知道是否解决了问题呢？</p>
+<p>通过集成到您的现有流程中，Sentry帮助您回答这些问题。有了sentry你的工作流可能像下面这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">编写代码</span><br><span class="line">部署代码</span><br><span class="line">发现有一个bug,部署之后，在用户点击点击之后发现是一个NullPointerException异常。sentry立即发现错误，然后通过一些聊天工具或者是一些其他的集成工具来警告你，当然这些告警规则可以在sentry中自定义。</span><br></pre></td></tr></table></figure>
+
+<p>这些提醒信息会带你来到sentry的dashboard，并且给你必要的上下文信息来分类问题，发生频率，用户影响，哪些代码受到影响，哪些团队成员是这个问题的负责人。然后它会给你展示详细信息来帮助你debug问题，例如堆栈跟踪，堆栈本地变量，先前的事件，可能导致问题的代码提交以及错误发生时捕获的自定义数据。您还可以在项目管理工具（如Jira）中自动开始跟踪问题。</p>
+<p>确定问题后，将修复代码提交到代码库。现在，你不需要时刻守护着这次fix代码，因为sentry会再代码commit之后，当代码得到部署的时候自动修改这个问题的状态。当这个问题又出现了的时候，sentry会标记这个问题为一个复现问题，并且你又会得到通知告警。</p>
+<p>与此同时，当遇到错误的时候，您的网站用户不再需要发给你一个模糊的”你的网站出问题了”来协助你解决问题。但是，值得注意的是，Sentry还可以为这些用户提供一种友好的方式来发送其他信息，这些信息可以帮助您更快地解决问题。</p>
+<p>尽管这是工作流的关键，但每个人的配置都有一些不同来以便适配最适合的特定环境。这就是为什么Sentry构造灵活的原因，因此您可以对其进行调整以满足自己的需求。</p>
+<h2 id="怎么做？"><a href="#怎么做？" class="headerlink" title="怎么做？"></a>怎么做？</h2><h3 id="第一步：SDK集成"><a href="#第一步：SDK集成" class="headerlink" title="第一步：SDK集成"></a>第一步：SDK集成</h3><p>Sentry是一种客户端/服务器体系架构。您将Sentry的SDK集成到您的应用程序中，并开始将错误发送到Sentry的服务器。</p>
+<p>根据语言/框架的不同，报告可以是完全自动的，也可以选择发送特定的错误。例如，要自动报告javascript项目中所有未捕获的异常，请将其添加到代码中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Raven.config(<span class="string">'&lt;your project specfic key, called a DSN&gt;'</span>).install()</span><br><span class="line">Raven.context(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    initMyApp();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>要捕获特定的错误，您可以添加：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// Do something that should not raise an exception</span></span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">    Raven.captureException(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Sentry开始收到错误后，您将看到如下所示的仪表板：</p>
+<blockquote>
+<p>此处有图</p>
+</blockquote>
+<p>单击一个问题将带您到一个页面，可以帮助您找到根本原因。这里最重要的是堆栈跟踪，显示导致错误的函数调用顺序。对于支持它的语言，您还可以查看单个堆栈框架的局部变量和全局变量的值。</p>
+<blockquote>
+<p>此处有图</p>
+</blockquote>
+<p>接下来是“面包屑”部分，它表示在该错误发生之前发生了的一系列事件。这些事件通常类似于传统日志，但也具有记录更丰富的结构化数据的能力。当sentry和web框架集成的时候，面包屑会自动记录一些事件的日志，比如：数据调用，网络请求，但您也可以手动检测代码中感兴趣的事件，这些事件将出现在后续问题的痕迹中。</p>
+<blockquote>
+<p>此处有图</p>
+</blockquote>
+<p>最后，您还有关于该问题的其他结构化数据：</p>
+<blockquote>
+<p>此处有图</p>
+</blockquote>
+<p>在异常时记录为标签的记录可用作过滤器。这对于确定哪些错误来自特定计算机，浏览器，发行版等很有用。</p>
+
+      </div>
+      <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yoursite.com">ipkaq</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yoursite.com/2020/02/07/用sentry来改进你的工作流/">http://yoursite.com/2020/02/07/用sentry来改进你的工作流/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+      <footer class="post-footer">
+        
+        <nav class="post-nav"><a class="prev" href="/2020/02/12/APM 文章/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"></span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    <a class="next" href="/2020/01/31/库尔特·冯内古特是正确的：“阅读和写作是迄今为止人类发现的最有营养的冥想形式。”/">
+        <span class="next-text nav-default"></span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:sudojs@email.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/ipkaq" class="iconfont icon-github" title="github"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2012 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ipkaq</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
