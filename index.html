@@ -1,357 +1,813 @@
 <!DOCTYPE html>
-<html lang>
-  <head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>Hexo</title>
+  <meta name="description" content="皮卡丘的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ipkaq&#39;s blog">
+<meta property="og:url" content="https://ipkaq.com/index.html">
+<meta property="og:site_name" content="ipkaq&#39;s blog">
+<meta property="og:description" content="皮卡丘的博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ipkaq&#39;s blog">
+<meta name="twitter:description" content="皮卡丘的博客">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://ipkaq.com/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="ipkaq&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
 
-<meta name="theme-color" content="#f8f5ec">
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
-<meta name="baidu-site-verification" content="IX7vFq28i0s"><meta name="google-site-verification" content="Wb12dzk_es2p4i5o57fY5rqZl_2NddJ06po91FmogN8"><link rel="alternate" href="/atom.xml" title="ipkaq's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
-<link rel="canonical" href="http://yoursite.com/">
-
-<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
-
-<script id="baidu_analytics">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?c2da1c6eb9857cd3168930de9c5ed8a6";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script><!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86900433-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-86900433-2');
-</script><script id="baidu_push">
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":false};
-</script>
-
-    <title>ipkaq's blog</title>
-  </head>
-
-  <body><div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/." class="logo">ipkaq's blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
   </div>
 </div>
 
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list"><a href="/">
-        <li class="mobile-menu-item">首页
-          </li>
-      </a><a href="/archives/">
-        <li class="mobile-menu-item">归档
-          </li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">标签
-          </li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">分类
-          </li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">关于
-          </li>
-      </a></ul>
-</nav>
-<div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
-  <a href="/." class="logo">ipkaq's blog</a>
-</div>
 
-<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
-          <a class="menu-item-link" href="/">
-            首页
-            </a>
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
         </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/archives/">
-            归档
-            </a>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
         </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/tags/">
-            标签
-            </a>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
         </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/categories/">
-            分类
-            </a>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
         </li>
-      <li class="menu-item">
-          <a class="menu-item-link" href="/about/">
-            关于
-            </a>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
         </li>
-      </ul></nav>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
 </header>
 
-      <main id="main" class="main">
-        <div class="content-wrapper">
-          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2020/03/26/计算机这行是门文科/">IT这行是门文科</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2020-03-26
-        </span><span class="post-category">
-            <a href="/categories/见解/">见解</a>
-            </span>
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
         </div>
-    </header>
-
-    <div class="post-content"><p>IT是一门文科，肯定很多人不服</p>
-          <div class="read-more">
-            <a href="/2020/03/26/计算机这行是门文科/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2020/03/22/系统设计算法/">系统设计算法</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2020-03-22
-        </span><span class="post-category">
-            <a href="/categories/算法/">算法</a>
-            <a href="/categories/算法/架构/">架构</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>架构师系统设计前需要了解的算法</p>
-          <div class="read-more">
-            <a href="/2020/03/22/系统设计算法/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2020/03/12/论春秋笔法/">论春秋笔法</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2020-03-12
-        </span><span class="post-category">
-            <a href="/categories/见解/">见解</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>春秋笔法对我们的危害</p>
-          <div class="read-more">
-            <a href="/2020/03/12/论春秋笔法/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/">Akka Streams介绍</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2020-02-23
-        </span><span class="post-category">
-            <a href="/categories/Akka/">Akka</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>Akka Streams介绍</p>
-          <div class="read-more">
-            <a href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/12/23/不要学习编程，要学习自动化/">不要学习编程，要学习自动化</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-12-23
-        </span><span class="post-category">
-            <a href="/categories/见解/">见解</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>不要学习编程，不要跟风</p>
-          <div class="read-more">
-            <a href="/2019/12/23/不要学习编程，要学习自动化/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/12/22/APM 文章/">APM文章收集（持续更新）</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-12-22
-        </span><span class="post-category">
-            <a href="/categories/系统设计/">系统设计</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>APM文章收集</p>
-          <div class="read-more">
-            <a href="/2019/12/22/APM 文章/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/10/22/[Akka Streams]2.Akka Streams快速上手/">Akka Streams快速指南</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-10-22
-        </span><span class="post-category">
-            <a href="/categories/Akka/">Akka</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>Akka Streams快速指南</p>
-          <div class="read-more">
-            <a href="/2019/10/22/[Akka Streams]2.Akka Streams快速上手/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/08/22/用sentry来改进你的工作流/">用sentry来改进你的工作流</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-08-22
-        </span><span class="post-category">
-            <a href="/categories/DevOpts/">DevOpts</a>
-            <a href="/categories/DevOpts/前端/">前端</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>用sentry来改进你的工作流</p>
-          <div class="read-more">
-            <a href="/2019/08/22/用sentry来改进你的工作流/" class="read-more-link">阅读更多</a>
-          </div>
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/07/23/慢就是快的理解/">慢就是快 (一)</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-07-23
-        </span><span class="post-category">
-            <a href="/categories/IT感悟/">IT感悟</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><p>慢就是快。孙子兵法说：兵贵神速，我说：慢就是快。为了达到目标，我们不免有时候会操之过急，兵贵神速变成了这种浮躁的人的说辞，其实兵贵神速的前提还是一个慢字。“养兵千日用兵一时”，千日慢才能换来一时的快。</p>
-<p>任何值得追求的事情，都不能一蹴而就。凡是可以速成的事情，没有一个值得花时间的学习的。走路，吃饭，识字，说话，其实都是非常慢的过程，游泳，驾照，英语，健身，同样没有一个可以速成的。这些技艺类的能力，都是需要持之以恒的拿时间熬出来！那么同样作为技艺的编程，为什么就可以速成呢？</p>
-<p>Peter Norvig 在<a href="https://norvig.com/21-days.html" target="_blank" rel="noopener">Teach Yourself Programming in Ten Years</a>中说到，编程自学需要十年的时间。十年！假设一天八小时的编程的话，竟然有两万九千多小时！对比那些所谓的一万小时定律的技能，弱爆了。编程本身就是脑力和体力的结合，而且对于我们非英语系国家的人来说，还有迈不开的英语关早晚要过。这都是时间一点点熬出来的。</p>
-<p>说了那么多，无非一个意思： 编程是一个花时间的技能！<br>最近我就在反思自己的编程之路，有哪些是真正的花了时间的，有哪些是浅尝辄止的。进行一个大概的时间统计，这个结果令我震惊：大多数的编程类时间都用来：”论坛灌水”，”各种技术博客”，”追逐新技术”，现在回过头来看，所有的这些，带给自己的收益，远小于时间付出。用投资角度来看，这是一门赔本的买卖，而且，赔了这么久，刚发现。所幸不晚，同样用投资的眼光看问题：弥补的措施肯定是选择高收益高回报，低风险的技术投资了。当然这种技术是不存在的，如果用四维象限来看，可能Golang和TypeScript是性价比最高的两门语言，K8s和React是两门值得投入的技术，未来的收益会不错。但是不管如何，不管是php还是Java，亦或是nodejs，golang，甚至是rust这种，大众或者小众都不重要，重要的是，你不能过于分散投资，并且换手率过高，通俗点说就是：别一会儿捣鼓这门技术，一会儿又捣鼓另一门技术。炒股的人，换手率高的，投资品类多的，没有赚钱的。这种上下文切换的消耗，可能比线程间的切换消耗都大，何况你的时间有限。</p>
-<p>《佛遗教经》说：<code>制心一处，无事不成</code>，我们在学习任何技能的时候，不免朝三暮四，不免受到各种新的知识的诱惑，不免受到各种生活中的事情干扰。制心一处谈何容易。今天听别人说docker牛逼，就去看docker，明天听别人说微服务是热门，就去看微服务，后天听到人家说AI是未来，就去研究AI，内心浮躁背后，是一种焦虑，也是一种不自信。对自己的选择有着严重的不自信，为什么不能坚信自己的选择是最好的呢？</p>
-<p>技术发展的趋势是，越来越个体化，去中心化是个大趋势，但是所有的去中心化思想的背后，一定会衍生出来另外一种更加庞大的中心化集权，犹如《三国演义》中说的”天下大势合久必分，分久必合”。对于我们来说，我们就要识别出来，变的东西是什么，不变的东西是什么，并且了解自己的性格，是喜欢一直追逐不断革新的技术还是喜欢一些传统稳定深度更强的知识体系呢？其实对于技术难度和技术品味来讲，做前端开发的和做系统底层驱动的没有任何高低之分，不能说搞底层系统驱动的就比搞前端的更牛，但是我们可以说，搞底层系统驱动的开发者，大概率比前端开发者水平高，因为底层系统驱动的入门门槛高，自然会有大量的新手劝退，前端处于军阀混战期间，而且有大量小白教程和培训机构，当然，这都无可厚非，任何的行业繁荣背后都是市场因素，五六年前IOS移动端开发多么炙手可热？技术的热度不代表什么，只要这门技术在行业中有大量的使用，就会有大量的工作机会，而对于个人来看，前端工作多，但是求职者竞争者同样也多，C++驱动开发工作少，但是竞争者同样少。人才市场同样也是市场，符合一切市场规律，物以稀为贵。所以，不能以热门程度来挑选技术，但是也不要挑选过于冷门的技术。</p>
-<p>什么技术值得慢慢的深入呢？慢工出细活，其实现在市面上的所有热门技术都值得投入！但是，你需要选一门，只有一门技术来深耕下去。你如果研究一门技术，或者一个领域，你发现其深度的探索过程中，总会有一些瓶颈，这个时候，这些瓶颈就是需要用技术的广度来打开局面，但是，如果一开始就花费大量的时间来看各种书，各种论坛的好坏优劣讨论，看到新技术就去学习，看到别人说什么不好就对自己的选择抱有怀疑，那么就会陷入”程序员的怪圈”中。</p>
-<p>很多技术是想通的，但是，你如果研究这门技术没有达到一定深度的时候，你只是一个名词王国的国王罢了，说着各种技术术语的rap也不会让你成为代码界的吴亦凡。用自己身上那些没有思考深度的技术，你会在一年内被各种年轻人超越，最后只能通过自己的”十年工作经验”这种来“震慑”年轻人。</p>
-<p>做技术和做人一样，不要急于求成，不要着急看到效果，好汤都是慢慢炖出来的，时间会提升一切技术的质量，如果现在这门技术还缺少想要的理解，如果感觉自己还需要一些技术概念来解释这门技术，那么可能自己还是没有真正掌握这门技术吧。00000000000000000000000000000000000000000000000000000000000000</p>
-
-        </div></article>
-      <article class="post">
-    <header class="post-header">
-      <h1 class="post-title"><a class="post-link" href="/2019/07/12/springcloud-gateway系列-快速开始/">springcloud gateway系列-快速开始</a>
-        </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-07-12
-        </span><span class="post-category">
-            <a href="/categories/springcloud/">springcloud</a>
-            </span>
-        </div>
-    </header>
-
-    <div class="post-content"><h1 id="Springcloud-gateway系列-快速开始"><a href="#Springcloud-gateway系列-快速开始" class="headerlink" title="Springcloud gateway系列-快速开始"></a>Springcloud gateway系列-快速开始</h1><p>留坑，待填</p>
-
-        </div></article>
-      <nav class="pagination"><a class="next" href="/page/2/">
-        <span class="next-text">下一页</span>
-        <i class="iconfont icon-right"></i>
-      </a>
-    </nav></section></div></div>
-      </main>
-
-      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:sudojs@email.com" class="iconfont icon-email" title="email"></a>
-        <a href="https://github.com/ipkaq" class="iconfont icon-github" title="github"></a>
-        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
-    </div><div class="copyright">
-  <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    主题 - 
-    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
-  </span>
-
-  <span class="copyright-year">&copy;2012 - 2020<span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">ipkaq</span>
-  </span>
+    </div>
 </div>
-</footer>
 
-      <div class="back-to-top" id="back-to-top">
-        <i class="iconfont icon-up"></i>
-      </div>
-    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Akka/">Akka</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/DevOpts/">DevOpts</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/DevOpts/前端/">前端</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT感悟/">IT感悟</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/springcloud/">springcloud</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/微服务/">微服务</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/算法/架构/">架构</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统设计/">系统设计</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/见解/">见解</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APM/">APM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Akka/">Akka</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DevOpts/">DevOpts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IT感悟/">IT感悟</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kong/">kong</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/springcloud/">springcloud</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微服务/">微服务</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/招聘/">招聘</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/见解/">见解</a><span class="tag-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/APM/" style="font-size: 13px;">APM</a> <a href="/tags/Akka/" style="font-size: 13.33px;">Akka</a> <a href="/tags/DevOpts/" style="font-size: 13px;">DevOpts</a> <a href="/tags/IT感悟/" style="font-size: 14px;">IT感悟</a> <a href="/tags/SQL/" style="font-size: 13.33px;">SQL</a> <a href="/tags/kong/" style="font-size: 13px;">kong</a> <a href="/tags/springcloud/" style="font-size: 13px;">springcloud</a> <a href="/tags/微服务/" style="font-size: 13.33px;">微服务</a> <a href="/tags/招聘/" style="font-size: 13px;">招聘</a> <a href="/tags/算法/" style="font-size: 13px;">算法</a> <a href="/tags/见解/" style="font-size: 13.67px;">见解</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11/">November 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">August 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/见解/">见解</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/26/计算机这行是门文科/" class="title">IT这行是门文科</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-26T12:05:07.000Z" itemprop="datePublished">2020-03-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/算法/">算法</a><i class="icon icon-angle-right"></i><a class="category-link" href="/categories/算法/架构/">架构</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/22/系统设计算法/" class="title">系统设计算法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-22T14:11:20.000Z" itemprop="datePublished">2020-03-22</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/见解/">见解</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/12/论春秋笔法/" class="title">论春秋笔法</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-12T12:00:20.000Z" itemprop="datePublished">2020-03-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Akka/">Akka</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/" class="title">Akka Streams介绍</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-02-23T10:43:41.312Z" itemprop="datePublished">2020-02-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/见解/">见解</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/12/23/不要学习编程，要学习自动化/" class="title">不要学习编程，要学习自动化</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-12-23T13:31:24.000Z" itemprop="datePublished">2019-12-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/26/计算机这行是门文科/">IT这行是门文科</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/03/26/计算机这行是门文科/" class="article-date">
+	  <time datetime="2020-03-26T12:05:07.000Z" itemprop="datePublished">Mar 26</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/见解/">见解</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/见解/">见解</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/26/计算机这行是门文科/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/22/系统设计算法/">系统设计算法</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/03/22/系统设计算法/" class="article-date">
+	  <time datetime="2020-03-22T14:11:20.000Z" itemprop="datePublished">Mar 22</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/算法/">算法</a>►<a class="article-category-link" href="/categories/算法/架构/">架构</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/算法/">算法</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/22/系统设计算法/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/12/论春秋笔法/">论春秋笔法</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/03/12/论春秋笔法/" class="article-date">
+	  <time datetime="2020-03-12T12:00:20.000Z" itemprop="datePublished">Mar 12</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/见解/">见解</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/见解/">见解</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/03/12/论春秋笔法/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/">Akka Streams介绍</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/" class="article-date">
+	  <time datetime="2020-02-23T10:43:41.312Z" itemprop="datePublished">Feb 23</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Akka/">Akka</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Akka/">Akka</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/02/23/[Akka Streams] 1.Akka Streams介绍/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/不要学习编程，要学习自动化/">不要学习编程，要学习自动化</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/12/23/不要学习编程，要学习自动化/" class="article-date">
+	  <time datetime="2019-12-23T13:31:24.000Z" itemprop="datePublished">Dec 23</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/见解/">见解</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/见解/">见解</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/23/不要学习编程，要学习自动化/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/22/APM 文章/">APM文章收集（持续更新）</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/12/22/APM 文章/" class="article-date">
+	  <time datetime="2019-12-22T15:11:20.000Z" itemprop="datePublished">Dec 22</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/系统设计/">系统设计</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/APM/">APM</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/22/APM 文章/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/22/[Akka Streams]2.Akka Streams快速上手/">Akka Streams快速指南</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/10/22/[Akka Streams]2.Akka Streams快速上手/" class="article-date">
+	  <time datetime="2019-10-22T11:50:06.000Z" itemprop="datePublished">Oct 22</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Akka/">Akka</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Akka/">Akka</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/10/22/[Akka Streams]2.Akka Streams快速上手/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/22/用sentry来改进你的工作流/">用sentry来改进你的工作流</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/08/22/用sentry来改进你的工作流/" class="article-date">
+	  <time datetime="2019-08-22T13:51:03.000Z" itemprop="datePublished">Aug 22</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/DevOpts/">DevOpts</a>►<a class="article-category-link" href="/categories/DevOpts/前端/">前端</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/DevOpts/">DevOpts</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/08/22/用sentry来改进你的工作流/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/慢就是快的理解/">慢就是快 (一)</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/07/23/慢就是快的理解/" class="article-date">
+	  <time datetime="2019-07-23T14:17:33.000Z" itemprop="datePublished">Jul 23</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/IT感悟/">IT感悟</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/IT感悟/">IT感悟</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/23/慢就是快的理解/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/springcloud-gateway系列-快速开始/">springcloud gateway系列-快速开始</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/07/12/springcloud-gateway系列-快速开始/" class="article-date">
+	  <time datetime="2019-07-12T03:06:37.000Z" itemprop="datePublished">Jul 12</time>
+	</a>
+</span>
+    
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/springcloud/">springcloud</a>
+  </span>
+
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/springcloud/">springcloud</a>, <a class="article-tag-link" href="/tags/微服务/">微服务</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/12/springcloud-gateway系列-快速开始/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+  </div>
+
+  
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev disabled">
+                <a href="javascript:;">
+                    <i class="icon icon-angle-left"></i>
+                    Prev
+                </a>
+            </li>
+            
+            
+            <li class="next">
+                <a href="/page/2/">
+                    Next
+                    <i class="icon icon-angle-right"></i>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 1 of 2</div>
+        </div>
+    </nav>
+    
+ 
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
 </body>
 </html>
